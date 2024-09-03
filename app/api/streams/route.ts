@@ -73,7 +73,7 @@ export async function GET(req: NextRequest) {
         if (!creatorId) {
             return NextResponse.json({
                 message: "Not Valid creatorId"
-            }, { status: 400 }); // Use 400 for bad requests
+            }, { status: 400 });
         }
 
         const [streams, activeStream] = await Promise.all([
@@ -121,9 +121,9 @@ export async function GET(req: NextRequest) {
         }, { status: 200 });
 
     } catch (err) {
-        console.error(err); // Log the error for debugging
+        console.error(err);
         return NextResponse.json({
             message: "Error while fetching streams"
-        }, { status: 500 }); // Use 500 for server errors
+        }, { status: 500 }); 
     }
 }
